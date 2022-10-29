@@ -1,6 +1,5 @@
 //토큰 생성, 토큰의 유효성 검증을 담당
 package com.login.jwt.jwt;
-
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
