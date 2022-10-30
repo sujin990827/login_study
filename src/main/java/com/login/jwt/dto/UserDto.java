@@ -1,9 +1,12 @@
 //회원가입시 사용할 DTO 클래스를 생성한다
 package com.login.jwt.dto;
+import java.util.stream.Collectors;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.login.jwt.domain.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,5 +31,6 @@ public class UserDto {
 	@NotNull
 	@Size(min=3, max=50)
 	private String nickname;
+
 
 }
