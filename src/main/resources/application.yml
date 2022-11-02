@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:8080/board_study?serverTimezone=Asia/Seoul
+    username: root
+    password: chocolate52
+  thymeleaf:
+    cache: false
+custom:
+  oauth2:
+    kakao:
+      client-id: swuujin52gmailcom
+      client-secret: chocolate52
+    naver:
+      client-id: swuujin990827navercom
+      client-secret: heimish52
