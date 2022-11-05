@@ -1,16 +1,28 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:8080/board_study?serverTimezone=Asia/Seoul
+    driver-class: name=com.mysql.cj.jdbc.Driver
     username: root
+    url: jdbc:mysql://localhost:3306/board_study?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     password: chocolate52
   thymeleaf:
     cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 958180173202-sii4epowero1eouvvjrlrnt27sikub08k.apps.googleusercontent.com
+            client-secret: k0asdfag801WdcJF8k9ST_8SG9
+  application:
+    name: user-service
+  main:
+    allow-circular-references: true
+
 custom:
   oauth2:
     kakao:
-      client-id: swuujin52gmailcom
-      client-secret: chocolate52
+      client-id: 7c929ec900e8a2f19ae5205bb2f0b8ba
+      client-secret: RDzQbQPVdjDXUkMdG8YWpNYG1nwiadpp
     naver:
-      client-id: swuujin990827navercom
-      client-secret: heimish52
+      client-id: B5yvH3Zaweyawerawwe6repj4z0L
+      client-secret: sArXFasdfawef

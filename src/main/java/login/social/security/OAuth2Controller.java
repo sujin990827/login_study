@@ -1,4 +1,4 @@
-package login.social.controller;
+package login.social.security;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,25 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class OAuth2Controller {
 
 	@GetMapping({"", "/"})
-	public String getAuthorizationMessage(){
+	public String getAuthorizationMessage() {
 		return "home";
 	}
 
-	//로그인 화면
 	@GetMapping("/login")
-	public String login(){
+	public String login() {
 		return "login";
 	}
 
-	//로그인 성공
 	@GetMapping({"/loginSuccess", "/hello"})
-	public String loginSuccess(){
+	public String loginSuccess() {
 		return "hello";
 	}
 
-	//로그인 실패
 	@GetMapping("/loginFailure")
-	public String loginFailure(){
+	public String loginFailure() {
 		return "loginFailure";
 	}
 }
