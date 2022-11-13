@@ -16,6 +16,7 @@ import org.springframework.web.filter.CorsFilter;
 
 import javax.servlet.Filter;
 
+import com.example.jwt.JwtAuthenticationFilter;
 import com.example.jwt.filter.MyFilter1;
 
 @Configuration
@@ -25,12 +26,6 @@ public class SecurityConfig extends  WebSecurityConfigurerAdapter { //authentica
 
 	private final CorsFilter corsFilter;
 	// private final UserRepository userRepository;
-
-
-	// @Bean
-	// public BCryptPasswordEncoder bCryptPasswordEncoder(){
-	// 	return new BCryptPasswordEncoder();
-	// }
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -44,7 +39,7 @@ public class SecurityConfig extends  WebSecurityConfigurerAdapter { //authentica
 			.addFilter(corsFilter)
 			.formLogin().disable()  //JWT 는 아이디 비번 로그인 필요없다
 			.httpBasic().disable()
-			//.addFilter(new JwtAuthenticationFIlter(authenticationManager())) //AuthenticationManager 가있어야 userNamePasswordFilter 가능
+			.addFilter(new JwtAuthenticationFilter(authenticationManager())) //AuthenticationManager 가있어야 userNamePasswordFilter 가능
 			//.addFilter(new JwtAuthorizationFilter(authenticationManager(),userRepository))
 			.authorizeRequests()
 			.antMatchers("/api/v1/user/**")
