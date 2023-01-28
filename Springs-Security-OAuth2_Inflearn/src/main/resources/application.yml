@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class: name=com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/board_study?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    password: chocolate52
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 349148748624-b7epivoikddqsbqjcpju49n1nfpr5l3a.apps.googleusercontent.com
+            client-secret: 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
+            scope: profile, email
